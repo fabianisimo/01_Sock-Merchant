@@ -16,10 +16,10 @@ def sockMerchant(n,ar):
     cant_pares = 0
     posiciones_tomadas = []
     for i in range(n-1):
-        if i in posiciones_tomadas:
-            pass
-        else:
-            for o in range(i+1, n):
+        for o in range(i+1, n):
+            if i in posiciones_tomadas or o in posiciones_tomadas:
+                pass
+            else:
                 if ar[i] == ar[o]:
                     cant_pares = cant_pares + 1
                     posiciones_tomadas.append(i)
